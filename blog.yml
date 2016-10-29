@@ -1,0 +1,11 @@
+author:
+    name:  Jeroen Thora
+    email: jeroenthora@gmail.com
+    urls:
+        github:  https://github.com/acrobat/
+        twitter: https://twitter.com/jeroenthora
+
+settings:
+    introduction: author.md
+    drafts: /drafts/
+    published: /published/
