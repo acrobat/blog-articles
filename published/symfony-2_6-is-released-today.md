@@ -4,6 +4,9 @@
 
 Today Symfony 2.6 is officialy released. This release is packed with nifty features and enhancements introduced by the [DX initiative](http://symfony.com/blog/making-the-symfony-experience-exceptional).
 
+
+[//]: # (Summary)
+
 Here’s a list of features that I’m personally exited about:
 
 - [New VarDumper Component and DebugBundle](http://symfony.com/doc/master/components/var_dumper.html)

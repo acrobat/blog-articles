@@ -4,6 +4,8 @@
 
 Modern web applications use HTML5 placeholders to give a hint to the user about what to enter in a field.
 
+[//]: # (Summary)
+
 ```html
 <input type="text" placeholder="Enter your name" id="name"/>
 ```
