@@ -4,13 +4,13 @@
 
 Modern web applications use HTML5 placeholders to give a hint to the user about what to enter in a field.
 
-[//]: # (Summary)
-
 ```html
 <input type="text" placeholder="Enter your name" id="name"/>
 ```
 
 The latest versions of all modern browsers [support](http://caniuse.com/#feat=input-placeholder) this attribute, but older versions of internet explorer (<IE10) don’t support it. This little snippet will add support for the placeholder attribute in browsers who lack this HTML5 feature.
+
+[//]: # (Summary)
 
 ```javascript
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
