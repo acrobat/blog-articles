@@ -42,12 +42,6 @@ A cleaner git log output with colors and a tree visualization.
 git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 ```
 
-or without the custom format
-
-```bash
-git log --oneline --decorate --graph
-```
-
 Output: 
 
 ```bash 
@@ -60,6 +54,12 @@ Output:
 * | 7d191da 2016-11-22 | Starting on feature xxx
 |/  
 * 127c16f 2016-11-22 | bugfix xxx
+```
+
+or without the custom format
+
+```bash
+git log --oneline --decorate --graph
 ```
 
 ## Using git bisect to track down bugs
