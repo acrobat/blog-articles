@@ -2,7 +2,7 @@
 [//]: # (DATE: 2016-11-23T21:55:00+0100)
 [//]: # (TAGS: git)
 
-I've been working with git for the last few years and I have some tricks to make my every day use a bit easier. So I wanted to share themand hopefully help
+I've been working with git for the last few years and I have some tricks to make my every day use a bit easier. So I wanted to share them and hopefully help
 someone with it. 
 
 This article is aimed at somebody who has already some experience using git.
