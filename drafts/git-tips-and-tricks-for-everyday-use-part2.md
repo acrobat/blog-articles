@@ -3,7 +3,7 @@
 [//]: # (TAGS: git)
 
 The [first part of my git tips & tricks blogpost](https://jeroenthora.be/post/git-tips-and-tricks-for-everyday-use) got 
-some really good responses. So I the time is right to compose a second list of tips & tricks.
+some really good responses. So I think the time is right to compose a second list of tips & tricks.
 
 ## (Force) push the current branch 
 
@@ -61,4 +61,27 @@ To find all available gitignore templates visit the [github/gitignore](https://g
 
 ```bash
 git rebase --onto
+```
+
+## Git standup alias
+
+A lot of teams use standups to recap the work each team member did the last day or so. When you work on a lot of
+different issues it's hard to remember what you exactly did. Therefor this alias makes it easy to retreive all the work
+done in the past day in all branches.
+
+```bash
+git config --global --add alias.standup '!git log --branches --remotes --tags --no-merges --author=\"`git config user.name`\" --since="$(if [[ "Mon" == "$(date +%a)" ]]; then echo \"last friday\"; else echo \"yesterday\"; fi)" --format=%s'
+
+# Now you can run the following command
+
+git standup
+```
+
+## Bonus: lazy standup
+
+This is a fun little extension to the `git standup` alias. We can use the built-in text-to-speech tool so you
+don't even have to speak during the standup :)
+
+```bash
+git config --global --add alias.lazy-standup '!git standup-simple | spd-say -e'
 ```
