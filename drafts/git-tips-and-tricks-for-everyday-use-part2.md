@@ -66,6 +66,18 @@ wget https://raw.githubusercontent.com/github/gitignore/master/Symfony.gitignore
 
 To find all available gitignore templates visit the [github/gitignore](https://github.com/github/gitignore) repository.
 
+## Gitignore alias
+
+With this alias you can easily add extra files or directories to the gitignore right from the command line.
+
+```bash
+git config --global --add alias.ignore '!f() { echo $1 >> .gitignore; }; f'
+
+# Execute the command
+
+git ignore /path/to/ignore/dir/*
+```
+
 ## Change the base branch
 
 When you accidentally create a feature branch from the incorrect branch. For example you started a branch from a feature 
