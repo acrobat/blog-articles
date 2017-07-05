@@ -28,15 +28,13 @@ To /tmp/test-repo
 error: failed to push some refs to '/tmp/test-repo'
 ```
 
-![Force push with lease](https://i.imgur.com/NT1cjYU.png)
-
 ## Partial reverts
 
 partial reverts (http://stackoverflow.com/questions/4795600/reverting-part-of-a-commit-with-git)
 
 ## Easily switch to previous branch
 
-Just like on the commandline you can switch to the previous directory by using `cd -`, you can use this same trick to
+Just like on the command line you can switch to the previous directory by using `cd -`, you can use this same trick to
 switch easily to the previous branch.
 
 ```bash
@@ -70,8 +68,12 @@ To find all available gitignore templates visit the [github/gitignore](https://g
 
 ## Change the base branch
 
+When you accidentally create a feature branch from the incorrect branch. For example you started a branch from a feature 
+branch instead of the master branch. By using `rebase --onto` you can rebase the feature branch from the correct branch.
+The syntax is like `rebase *original starting branch* --onto *correct branch*`.
+
 ```bash
-git rebase --onto
+git rebase feature-1 --onto master
 ```
 
 ## Git standup alias
@@ -98,3 +100,5 @@ git config --global --add alias.lazy-standup '!git standup-simple | spd-say -e'
 
 # Just run git lazy-standup and just sit back and relax :)
 ```
+
+If you have other cool git tips and tricks or you like any of these, let it know in the comments below!
