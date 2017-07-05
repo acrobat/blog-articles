@@ -17,7 +17,18 @@ git push origin HEAD -f
 
 ## Force push with lease
 
-force push with lease
+To avoid overriding changes on the remote branch because you force push, git has a built-in safety check. 
+You can use the `--force-with-lease` flag, this way git will check that the remote branch has not been 
+updated since you last fetched it.
+
+```bash
+$ git push origin HEAD --force-with-lease
+To /tmp/test-repo
+ ! [rejected]        dev -> dev (stale info)
+error: failed to push some refs to '/tmp/test-repo'
+```
+
+![Force push with lease](https://imgur.com/a/XITZD)
 
 ## Partial reverts
 
@@ -66,13 +77,13 @@ git rebase --onto
 ## Git standup alias
 
 A lot of teams use standups to recap the work each team member did the last day or so. When you work on a lot of
-different issues it's hard to remember what you exactly did. Therefor this alias makes it easy to retreive all the work
+different issues it's hard to remember what you exactly did in that timespan. Therefor this alias makes it easy to retreive all the work
 done in the past day in all branches.
 
 ```bash
 git config --global --add alias.standup '!git log --branches --remotes --tags --no-merges --author=\"`git config user.name`\" --since="$(if [[ "Mon" == "$(date +%a)" ]]; then echo \"last friday\"; else echo \"yesterday\"; fi)" --format=%s'
 
-# Now you can run the following command
+# Now you can run the following command and get all commits you did yesterday
 
 git standup
 ```
@@ -84,4 +95,6 @@ don't even have to speak during the standup :)
 
 ```bash
 git config --global --add alias.lazy-standup '!git standup-simple | spd-say -e'
+
+# Just run git lazy-standup and just sit back and relax :)
 ```
