@@ -28,7 +28,7 @@ To /tmp/test-repo
 error: failed to push some refs to '/tmp/test-repo'
 ```
 
-![Force push with lease](https://imgur.com/a/XITZD)
+![Force push with lease](https://i.imgur.com/NT1cjYU.png)
 
 ## Partial reverts
 
