@@ -3,7 +3,7 @@
 [//]: # (TAGS: git)
 
 The [first part of my git tips & tricks blogpost](https://jeroenthora.be/post/git-tips-and-tricks-for-everyday-use) got 
-some really good responses. So I think the time is right to compose a second list of tips & tricks.
+some really good responses. It's been a while so I think the time is right to compose a second list of tips & tricks!
 
 ## (Force) push the current branch 
 
