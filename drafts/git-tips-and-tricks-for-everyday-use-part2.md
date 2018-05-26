@@ -28,9 +28,34 @@ To /tmp/test-repo
 error: failed to push some refs to '/tmp/test-repo'
 ```
 
+## Bisect run
+
+Git bisect is a great tool to trace bugs to the commit that introduced them. But this can be a long process when it's an complex issue or it was committed a long time ago. In order to make this process easier and faster, you can use `git bisect run`. This sub-command of the bisect tool allow to pass an automated check if a commit is good or bad. You can for example pass a phpunit test that will validate all commits that bisect will check. If the test(s) fail it's a bad commit otherwise it's a good commit. 
+
+```bash
+git bisect start
+
+git bisect good 85730ab # We know the functionality worked at commit 85730ab
+
+git bisect bad fbe6fb8 # And we know that the current commit is bad
+
+git bisect run phpunit tests/BrokenFunctionalityTest.php # Bisect is setup, so run it with our test to validate the functionality
+
+# Result
+ad1a436f0c15676cd5251e1d73c3af667e739a72 is the first bad commit
+```
+
 ## Partial reverts
 
-partial reverts (http://stackoverflow.com/questions/4795600/reverting-part-of-a-commit-with-git)
+Sometimes you want to revert a "bad" commit but keep some of the changes. This can easily be done by the `
+revert --no-commit (-n)` command.
+
+```bash
+git revert -n $bad_commit    # Revert the commit, but don't commit the changes
+git reset HEAD .             # Unstage the changes
+git add --patch .            # Add the changes you want to keep
+git commit                   # Commit those changes
+```
 
 ## Easily switch to previous branch
 
