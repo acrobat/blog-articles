@@ -30,7 +30,9 @@ error: failed to push some refs to '/tmp/test-repo'
 
 ## Bisect run
 
-Git bisect is a great tool to trace bugs to the commit that introduced them. But this can be a long process when it's an complex issue or it was committed a long time ago. In order to make this process easier and faster, you can use `git bisect run`. This sub-command of the bisect tool allow to pass an automated check if a commit is good or bad. You can for example pass a phpunit test that will validate all commits that bisect will check. If the test(s) fail it's a bad commit otherwise it's a good commit. 
+Git bisect is a great tool to trace bugs to the commit that introduced them. But this can be a long process when it's an complex issue or it was committed a long time ago. In order to make this process easier and faster, you can use `git bisect run`. 
+
+This sub-command of the bisect tool allows to pass an automated check if a commit is good or bad. You can for example pass a phpunit test that will validate all commits that bisect will check. If the test(s) fail it's a bad commit otherwise it's a good commit. 
 
 ```bash
 git bisect start
@@ -52,7 +54,7 @@ revert --no-commit (-n)` command.
 
 ```bash
 git revert -n $bad_commit    # Revert the commit, but don't commit the changes
-git reset HEAD .             # Unstage the changes
+git reset HEAD               # Unstage the changes
 git add --patch .            # Add the changes you want to keep
 git commit                   # Commit those changes
 ```
