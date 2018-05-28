@@ -122,7 +122,8 @@ different issues it's hard to remember what you exactly did in that timespan. Th
 done in the past day in all branches.
 
 ```bash
-git config --global --add alias.standup '!git log --branches --remotes --tags --no-merges --author=\"`git config user.name`\" --since="$(if [[ "Mon" == "$(date +%a)" ]]; then echo \"last friday\"; else echo \"yesterday\"; fi)" --format=%s'
+git config --global --add alias.standup "!git log --branches --remotes --tags --no-merges --author=\"$(git config user.name)\" --since=\"if [[ \\\"Mon\\\" == \\\"$(date +%a)\\\" ]]; then echo \\\"last friday\\\"; else echo \\\"yesterday\\\"; fi\" --format=%s"
+
 
 # Now you can run the following command and get all commits you did yesterday
 
@@ -135,7 +136,7 @@ This is a fun little extension to the `git standup` alias. We can use the built-
 don't even have to speak during the standup :)
 
 ```bash
-git config --global --add alias.lazy-standup '!git standup-simple | spd-say -e'
+git config --global --add alias.lazy-standup '!git standup-simple | spd-say -e' # On osx you can use the say command instead of spd-say
 
 # Just run git lazy-standup and just sit back and relax :)
 ```
