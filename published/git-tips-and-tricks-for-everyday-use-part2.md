@@ -1,5 +1,5 @@
 [//]: # (TITLE: Git tips & tricks for everyday use - part 2)
-[//]: # (DATE: 2018-05-28T8:00:00+0100)
+[//]: # (DATE: 2018-05-28T8:00:00)
 [//]: # (TAGS: git)
 
 The [first part of my git tips & tricks blogpost](https://jeroenthora.be/post/git-tips-and-tricks-for-everyday-use) got 
