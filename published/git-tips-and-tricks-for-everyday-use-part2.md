@@ -122,8 +122,7 @@ different issues it's hard to remember what you exactly did in that timespan. Th
 done in the past day in all branches.
 
 ```bash
-git config --global --add alias.standup "!git log --branches --remotes --tags --no-merges --author=\"$(git config user.name)\" --since=\"if [[ \\\"Mon\\\" == \\\"$(date +%a)\\\" ]]; then echo \\\"last friday\\\"; else echo \\\"yesterday\\\"; fi\" --format=%s"
-
+git config --global --add alias.standup '!git log --branches --remotes --tags --no-merges --author="`git config user.name`" --since="$(if [[ "Mon" == "$(date +%a)" ]]; then echo \"last friday\"; else echo \"yesterday\"; fi)" --format=%s'
 
 # Now you can run the following command and get all commits you did yesterday
 
